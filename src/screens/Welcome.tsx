@@ -1,18 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, Pressable } from 'react-native';
-import { Image } from 'expo-image';
-
-const BLURHASH = 'LHC4ebJ*2o#:|2OBB7weB7jt,GWV';
+import { Text, View, Pressable, ImageBackground } from 'react-native';
 
 export default function Welcome({ navigation }: { navigation: any }) {
   return (
-    <Image
-      source="https://images.unsplash.com/photo-1545128485-c400e7702796"
+    <ImageBackground
+      source={require('../../assets/bg.png')}
       className="flex-1"
-      contentFit="cover"
-      cachePolicy="disk"
-      placeholder={BLURHASH}
-      transition={250}
+      resizeMode={'cover'}
     >
       <View className="flex-1 items-center justify-center">
         <View className="items-center -top-24">
@@ -38,7 +32,7 @@ export default function Welcome({ navigation }: { navigation: any }) {
 
           <View className="space-y-2 mt-4 w-screen px-4">
             <Pressable
-              className="rounded-lg py-4 bg-red-800 border-red-800 border"
+              className="rounded-xl py-4 bg-red-800 border-red-800 border"
               onPress={() => navigation.navigate('Sign In')}
             >
               <Text className="text-base text-center font-bold text-neutral-50">
@@ -47,7 +41,7 @@ export default function Welcome({ navigation }: { navigation: any }) {
             </Pressable>
 
             <Pressable
-              className="rounded-lg py-4 bg-red-800 border-red-800 border"
+              className="rounded-xl py-4 bg-red-800 border-red-800 border"
               onPress={() => navigation.navigate('Register')}
             >
               <Text className="text-base text-center font-bold text-neutral-50">
@@ -58,6 +52,6 @@ export default function Welcome({ navigation }: { navigation: any }) {
         </View>
         <StatusBar style="auto" />
       </View>
-    </Image>
+    </ImageBackground>
   );
 }

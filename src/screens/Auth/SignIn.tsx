@@ -26,7 +26,7 @@ export default function SignIn({ navigation }: { navigation: any }) {
           <TextInput
             placeholder="sparky@asu.edu"
             keyboardType="email-address"
-            className="text-xl text-white border-2 border-red-800 rounded-lg p-2 font-semibold"
+            className="text-xl text-white border-2 border-red-800 rounded-xl p-2 font-semibold"
             onSubmitEditing={Keyboard.dismiss}
             onChangeText={setEmail}
             autoCapitalize="none"
@@ -42,7 +42,7 @@ export default function SignIn({ navigation }: { navigation: any }) {
           <TextInput
             placeholder="************"
             keyboardType="visible-password"
-            className="text-xl text-white border-2 border-red-800 rounded-lg p-2 font-semibold"
+            className="text-xl text-white border-2 border-red-800 rounded-xl p-2 font-semibold"
             onSubmitEditing={Keyboard.dismiss}
             onChangeText={setPassword}
             autoCapitalize="none"
@@ -62,7 +62,7 @@ export default function SignIn({ navigation }: { navigation: any }) {
 
       <View className="mt-8 w-screen px-4 space-y-1">
         <Pressable
-          className="rounded-lg py-4 bg-red-800 border-red-800 border"
+          className="rounded-xl py-4 bg-red-800 border-red-800 border"
           onPress={() => {
             console.log('Sign In Pressed!');
 

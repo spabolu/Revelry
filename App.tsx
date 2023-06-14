@@ -22,6 +22,9 @@ import {
   ArrowUpDown,
   PartyPopper,
   SearchIcon,
+  ListRestart,
+  Settings,
+  ShareIcon,
 } from 'lucide-react-native';
 
 export default function App() {
@@ -50,17 +53,6 @@ export default function App() {
           tabBarBackground() {
             return <View className="bg-black h-full" />;
           },
-          headerRight: () => (
-            <View className="flex flex-row space-x-2 mr-2">
-              <ArrowUpDown className="text-red-700" />
-              <UserCircle className="text-red-700" />
-            </View>
-          ),
-          headerLeft: () => (
-            <View className="ml-2">
-              <Ticket className="text-red-700" />
-            </View>
-          ),
           headerTitle(props) {
             return (
               <Text className="text-2xl font-bold text-neutral-50">
@@ -77,6 +69,17 @@ export default function App() {
           options={{
             tabBarIcon: () => <UserCircle className="text-red-700" />,
             tabBarActiveTintColor: 'rgb(185 28 28)',
+            headerRight: () => (
+              <View className="flex flex-row space-x-5 mr-2">
+                <ShareIcon className="text-red-700" />
+                <Settings className="text-red-700" />
+              </View>
+            ),
+            headerLeft: () => (
+              <View className="flex flex-row space-x-5 ml-2">
+                <Ticket className="text-red-700" />
+              </View>
+            ),
           }}
         />
         <Tab.Screen
@@ -85,6 +88,12 @@ export default function App() {
           options={{
             tabBarIcon: () => <PartyPopper className="text-red-700" />,
             tabBarActiveTintColor: 'rgb(185 28 28)',
+            headerRight: () => (
+              <View className="flex flex-row space-x-5 mr-2">
+                <ArrowUpDown className="text-red-700" />
+                <ListRestart className="text-red-700" />
+              </View>
+            ),
           }}
         />
         <Tab.Screen
