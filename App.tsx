@@ -47,6 +47,9 @@ export default function App() {
             fontSize: 12,
             fontWeight: 'bold',
           },
+          tabBarBackground() {
+            return <View className="bg-black h-full" />;
+          },
           headerRight: () => (
             <View className="flex flex-row space-x-2 mr-2">
               <ArrowUpDown className="text-red-700" />
