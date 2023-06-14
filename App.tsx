@@ -54,7 +54,7 @@ export default function App() {
             </View>
           ),
           headerLeft: () => (
-            <View className="mr-2">
+            <View className="ml-2">
               <Ticket className="text-red-700" />
             </View>
           ),
