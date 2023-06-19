@@ -16,7 +16,7 @@ npm install # to install all packages
 npx expo start # to start the Expo simulator
 ```
 
-Make sure to install `Expo Go` from App Store or Play Store running on a physical device.
+Make sure to install `Expo Go` from App Store or Play Store if running on a physical device.
 
 ### Features
 
