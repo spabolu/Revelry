@@ -17,7 +17,7 @@ export default function Search() {
       <View className="w-screen m-2">
         {searchQuery.type === 0 ? (
           <TextInput
-            placeholder="search parties..."
+            placeholder="Search Parties..."
             className="text-xl text-white border-2 border-red-800 rounded-xl p-2 font-semibold"
             onSubmitEditing={Keyboard.dismiss}
             value={searchQuery.query}
@@ -28,7 +28,7 @@ export default function Search() {
           />
         ) : (
           <TextInput
-            placeholder="search users..."
+            placeholder="Search Users..."
             className="text-xl text-white border-2 border-red-800 rounded-xl p-2 font-semibold"
             onSubmitEditing={Keyboard.dismiss}
             value={searchQuery.query}
