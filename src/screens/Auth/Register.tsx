@@ -12,8 +12,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useTogglePasswordVisibility } from './UseTogglePasswordVisibility';
-import zxcvbn from 'zxcvbn';
-import { ProgressBar } from 'react-native-progress';
+// import zxcvbn from 'zxcvbn';
+// import { ProgressBar } from 'react-native-progress';
 
 export default function Register({ navigation }: { navigation: any }) {
   const [email, setEmail] = useState('');
@@ -21,13 +21,13 @@ export default function Register({ navigation }: { navigation: any }) {
   const [confirmpassword, setConfirmPassword] = useState('');
   const { passwordVisibility, rightIcon, handlePasswordVisibility } =
     useTogglePasswordVisibility();
-  const [passwordStrength, setPasswordStrength] = useState(0);
+  // const [passwordStrength, setPasswordStrength] = useState(0);
 
-  const handlePasswordChange = (value: string) => {
-    setPassword(value);
-    const strength = zxcvbn(value).score;
-    setPasswordStrength(strength);
-  };
+  // const handlePasswordChange = (value: string) => {
+  //   setPassword(value);
+  //   const strength = zxcvbn(value).score;
+  //   setPasswordStrength(strength);
+  // };
 
   const handleRegister = async () => {
     console.log('Email: ', email);
@@ -97,9 +97,9 @@ export default function Register({ navigation }: { navigation: any }) {
               />
             </Pressable>
           </View>
-          {password && 
+          {/* {password && 
             <ProgressBar progress = {passwordStrength / 4} color = {getPasswordStrengthColor(passwordStrength)}
-          }
+          } */}
         </View>
 
         <View className="space-y-0.5">
