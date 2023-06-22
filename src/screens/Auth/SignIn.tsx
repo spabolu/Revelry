@@ -3,10 +3,14 @@ import { View, Text, TextInput, Pressable, Keyboard } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useTogglePasswordVisibility } from './UseTogglePasswordVisibility';
 
 export default function SignIn({ navigation }: { navigation: any }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { passwordVisibility, rightIcon, handlePasswordVisibility } =
+    useTogglePasswordVisibility();
 
   const handleSignIn = async () => {
     console.log('Email: ', email);
@@ -37,20 +41,30 @@ export default function SignIn({ navigation }: { navigation: any }) {
           />
         </View>
 
-        <View className="space-y-0.5">
+        <View className="space-y-0.5 relative">
           <Text className="text-neutral-50 text-2xl font-bold">Password</Text>
           <TextInput
-            placeholder="************"
+            placeholder="Enter Password"
             keyboardType="visible-password"
-            className="text-xl text-white border-2 border-red-800 rounded-xl p-2 font-semibold"
+            className="text-xl text-white border-2 border-red-800 rounded-xl p-2 font-semibold pr-10"
             onSubmitEditing={Keyboard.dismiss}
             onChangeText={setPassword}
             autoCapitalize="none"
             autoCorrect={false}
             placeholderTextColor={'rgb(82 82 82)'}
             value={password}
-            secureTextEntry={true}
+            secureTextEntry={passwordVisibility}
           />
+          <Pressable
+            onPress={handlePasswordVisibility}
+            className="absolute top-11 transform -translate-y-1/2 right-2 flex items-center pr-2"
+          >
+            <MaterialCommunityIcons
+              name={rightIcon as any}
+              size={26}
+              color="rgb(82 82 82)"
+            />
+          </Pressable>
         </View>
 
         <Pressable onPress={() => console.log('"Forgot Password" Pressed!')}>
